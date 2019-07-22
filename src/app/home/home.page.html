@@ -9,36 +9,129 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
-</ion-content>
+<ion-content padding>
+
+  <ion-segment (ionChange)="segmentChanged($event)" value="home">
+    <ion-segment-button value="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="noticias">
+      <ion-icon name="paper"></ion-icon>
+      <ion-label>Notícias</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid>
+  <ion-row>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/info.png"></div>
+      <span>Anori</span>
+    </ion-col>
+    <ion-col>
+      <div id="icon" (click)="openFutebol()"><img src="../../assets/icon/stadium.png"></div>
+      <span>Esporte</span>
+    </ion-col>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/laugh.png"></div>
+      <span>Lazer</span>
+    </ion-col>
+  </ion-row>
+  <br>
+   <ion-row>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/store.png"></div>
+      <span>Comercios</span>
+    </ion-col>
+    
+    <ion-col>
+      <div id="icon-rest"><img src="../../assets/icon/pizza-shop.png"></div>
+      <span>Restaurantes & Lanches</span>
+    </ion-col>
+
+    <ion-col>
+      <div id="icon" (click)="openHoteis()"><img src="../../assets/icon/hotel.png"></div>
+      <span>Hotéis</span>
+    </ion-col>
+
+  </ion-row>
+  <br>
+  <ion-row>
+    <ion-col>
+      <div id="icon" (click)="openIgrejas()"><img src="../../assets/icon/church.png"></div>
+      <span>Igrejas</span>
+    </ion-col>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/hospital.png"></div>
+      <span>Hospitais</span>
+    </ion-col>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/school.png"></div>
+      <span>Escolas</span>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/news.png"></div>
+      <span>noticias</span>
+    </ion-col>
+    <ion-col (click)="openPrefeitura()">
+      <div id="icon"><img src="../../assets/icon/town-hall.png"></div>
+      <span>prefeitura</span>
+    </ion-col>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/museum.png"></div>
+      <span>câmara municipal</span>
+    </ion-col>
+  </ion-row>
+
+   <ion-row>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/farmer.png"></div>
+      <span>mercado</span>
+    </ion-col>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/laugh.png"></div>
+      <span>eventos</span>
+    </ion-col>
+    <ion-col>
+      <div id="icon"><img src="../../assets/icon/cross.png"></div>
+      <span>nota de falecimento</span>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+
+<!--<ion-grid>
+  <ion-row>
+    <ion-col >
+      <div id="img-news"><img src="../../assets/news/idam.jpg"></div>
+    </ion-col>
+    <ion-col>
+      <h6 id="titulo-news">Idam incentiva plantio de feijão em Canutama</h6>
+    </ion-col>
+  </ion-row>
+  <ul>
+    <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px; margin-left: -10%;"/>
+  </ul>
+  <ion-row>
+    <ion-col >
+      <div id="img-news"><img src="../../assets/news/mpf.jpg"></div>
+    </ion-col>
+    <ion-col>
+      <p id="titulo-news">MPF agi contra posseiros</p>
+    </ion-col>
+  </ion-row>
+
+  <ul>
+    <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px; margin-left: -10%;"/>
+  </ul>
+  <ion-row>
+    <ion-col >
+      <div id="img-news"><img src="../../assets/news/porto.JPG"></div>
+    </ion-col>
+    <ion-col>
+      <p id="titulo-news">3 Municipios do AM tem portos reativados</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>-->

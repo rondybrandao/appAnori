@@ -9,13 +9,23 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+//disqus
+import { DisqusModule } from "ngx-disqus";
+
+//google maps
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    DisqusModule.forRoot('appanoriesporte'),
+    AgmCoreModule.forRoot({
+      apiKey: 'CHAVES_GOOGLE_MAPS'
+    })
   ],
   providers: [
     StatusBar,

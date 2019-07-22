@@ -1,0 +1,84 @@
+ion-toolbar {
+  --background: url('../../assets/futebol/grass2.jpg') no-repeat center center / cover;
+  -webkit-background-size: cover;
+  color: black;
+  font-family: fantasy;  
+}
+
+ion-content {
+  --background: url('/assets/futebol/court.jpg') no-repeat center center / cover;
+}
+ion-slides {
+    margin-top: 0%;
+    //background: #e6e6e6;
+    margin-bottom: 0px;
+    img {
+        padding-top: -1px;
+        padding-bottom: 0px;
+    }
+  }
+.progress-col {
+    //margin-bottom: -70%;
+    padding-right: 0px;
+  }
+
+.ion-slide {
+    width: 100px;
+  }
+
+//crack da rodada
+p {
+    margin-top: -10px
+}
+.label-crack {
+    font-family: fantasy;
+    margin-bottom: -45px;
+    padding-left: 95px;
+  }
+.avatar {
+  margin-top: -81%;
+  margin-left: 66px;
+}
+.avatar img {
+  width: 130px;
+  height: 130px;
+  max-width: 150px;
+  max-height: 150px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.5);
+}
+
+.moldura {
+  margin-top: -45px;
+}
+.moldura img {
+  width: 100%
+}
+
+#id-avatar {
+    // background-image: url('../../assets/imgs/molduras-avatar.png'); 
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    text-align: center;
+    padding-top: 3px;
+    margin-left: -66px;
+    font-family: fantasy;
+    color: black;
+  }
+
+
+// PLACAR
+
+.placar {
+    margin-left: 15px;
+    margin-right: -54px;
+}
+.label-placar {
+    font-family: fantasy;
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }

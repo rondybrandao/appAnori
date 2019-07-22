@@ -1,4 +1,43 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+ion-header {
+  height: 150px;
+}
+ion-toolbar {
+  //--background: url('../../assets/img/header.jpg') no-repeat center center / cover;
+  //-webkit-background-size: cover;
+  color: white;
+  font-family: fantasy;
+  height: 150px;
+  
+}
+ion-content {
+  --background: url('/assets/bg.jpg') no-repeat center center / cover;
+}
+ion-button {
+  width: -webkit-fill-available;
+  margin-top: -10%;
+  
+}
+ion-title {
+  padding-left: 40%;
+  padding-top: 12px;
+}
+ion-menu-button {
+  color: white;
+}
+ion-col {
+padding-left: 20px
+}
+h2 {
+  text-align: center;
+  padding-top: 12px;    
+}
+.sc-ion-buttons-md-h {
+margin-top: -55px;
+}
+#icon {
+width:80%;
+}
+#icon-rest {
+width:75%;
+margin-top: -10%
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -14,12 +15,16 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  { path: 'futebol', loadChildren: './futebol/futebol.module#FutebolPageModule' },
+  { path: 'times', loadChildren: './times/times.module#TimesPageModule' },
+  { path: 'prefeitura', loadChildren: './prefeitura/prefeitura.module#PrefeituraPageModule' }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    
   ],
   exports: [RouterModule]
 })
