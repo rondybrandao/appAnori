@@ -1,0 +1,15 @@
+ion-toolbar {
+    --background: url('/assets/eventos/cedulas.jpg') no-repeat center center / cover;
+    -webkit-background-size: cover;
+    color: black;
+    font-family: fantasy;  
+  }
+  
+ion-content {
+    //--background: url('/assets/eventos/cedulas.jpg') no-repeat center center / cover;
+  }
+.title {
+    font-size: 16px;
+    color: #5aadef;
+    font-weight: 600;
+}

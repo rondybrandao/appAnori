@@ -21,8 +21,8 @@
 				</div>
 			</div>
 		</div>
-    <div class="heart-votar">
-      <img src="assets/futebol/like.png"> 
+    <div class="heart-votar"  (click)="torcedor(vote[0])">
+      <img src="{{vote[0].value}}"> 
     </div>
      <div class="badge">
         <ion-badge color="primary">11 torcedores</ion-badge>

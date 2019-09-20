@@ -7,6 +7,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  category = 'home'
 
   constructor(public navCtrl: NavController) {}
 
@@ -15,5 +16,24 @@ export class HomePage {
   }
   openPrefeitura() {
     this.navCtrl.navigateForward('prefeitura')
+  }
+  openDenuncia() {
+    this.navCtrl.navigateForward('denuncia')
+  }
+  openBingoTorneio() {
+    this.navCtrl.navigateForward('bingo-torneio')
+  }
+  openInfoAnori() {
+    this.navCtrl.navigateForward('info-anori')
+  }
+  openMototaxi(){
+    this.navCtrl.navigateForward('mototaxi')
+  }
+
+  segmentChanged(ev: any) {
+    
+    const valorSegment = ev.detail.value
+    this.category = valorSegment
+    console.log('Segment changed', this.category);
   }
 }

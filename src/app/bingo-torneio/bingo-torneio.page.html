@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Bingos & Torneios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-button class="title" expand="block" fill="outline" >Anunciar Torneio</ion-button>
+  <ion-button class="title" expand="block" fill="outline" >Anunciar Bingo</ion-button>
+
+  <ion-card>
+        <img src="assets/treasure-chest-312239_640.png" />
+        <ion-card-header>
+          <ion-card-subtitle>Torneio</ion-card-subtitle>
+          <ion-card-title class="title">1 Garrrote</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ul>
+            <li>Premio 1º lugar</li>
+            <li>Premio 2º lugar</li>
+            <li>Premio 3º lugar</li>
+          </ul>
+        </ion-card-content>
+      </ion-card>
+      
+
+  <!-- fab placed in the center of the content with a list on each side -->
+  <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    
+    <ion-fab-list side="bottom">
+      <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

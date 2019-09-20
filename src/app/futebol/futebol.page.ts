@@ -28,4 +28,8 @@ export class FutebolPage implements OnInit {
     this.navCtrl.navigateBack('')
   }
 
+  openVotacaoMelhorJogador() {
+    this.navCtrl.navigateForward('melhor-jogador')
+  }
+
 }

@@ -1,6 +1,8 @@
 {
   "name": "appAnori",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "c864fc0a"
 }

@@ -18,7 +18,13 @@ const routes: Routes = [
   },
   { path: 'futebol', loadChildren: './futebol/futebol.module#FutebolPageModule' },
   { path: 'times', loadChildren: './times/times.module#TimesPageModule' },
-  { path: 'prefeitura', loadChildren: './prefeitura/prefeitura.module#PrefeituraPageModule' }
+  { path: 'prefeitura', loadChildren: './prefeitura/prefeitura.module#PrefeituraPageModule' },
+  { path: 'denuncia', loadChildren: './denuncia/denuncia.module#DenunciaPageModule' },
+  { path: 'bingo-torneio', loadChildren: './bingo-torneio/bingo-torneio.module#BingoTorneioPageModule' },
+  { path: 'info-anori', loadChildren: './info-anori/info-anori.module#InfoAnoriPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
+  { path: 'melhor-jogador', loadChildren: './melhor-jogador/melhor-jogador.module#MelhorJogadorPageModule' },
+  { path: 'mototaxi', loadChildren: './mototaxi/mototaxi.module#MototaxiPageModule' }
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 var disqus_config = function () {
   this.page.url = '/about';  // Replace PAGE_URL with your page's canonical URL variable
@@ -21,14 +22,40 @@ var disqus_config = function () {
 })
 export class TimesPage implements OnInit {
   pageId = '/about';
+  heartNoVote = 'assets/futebol/heart.png'
+  heartVote = 'assets/futebol/like.png'
+  heart = this.heartNoVote
+  contVote: any = 0
 
-  constructor(public navCrtl: NavController) { }
+  vote = [
+    {checked: false, value:'assets/futebol/heart.png'},
+    {checked: true, value:'assets/futebol/like.png'},
+  ]
+  constructor(
+    public navCrtl: NavController,
+    public afAuth: AngularFireAuth,
+    ) { }
 
   ngOnInit() {
   }
 
   voltar() {
     this.navCrtl.navigateBack('futebol')
+  }
+  torcedor(eve) {
+    console.log(eve)
+    //eve = !this.vote[0].checked
+      console.log('evento:',eve)
+      if (eve.checked){
+        console.log('checkado')
+        this.vote[0].checked = false
+        this.vote[0].value = this.heartNoVote
+      } else {
+        console.log("nao checkado")
+        this.vote[0].checked = true 
+        this.vote[0].value = this.heartVote
+      }
+      
   }
 
 }

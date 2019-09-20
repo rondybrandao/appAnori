@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>melhor-jogador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-radio-group (ionChange)="radioSelect($event)">
+    <ion-list-header>
+      <ion-label>Lista com os nomes dos melhores jogadores de cada club escolhido pelo treinador</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+  
+      <ion-label>Biff</ion-label>
+      <ion-radio slot="start" value="biff" checked></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+
+      <ion-label>Griff</ion-label>
+      <ion-radio slot="start" value="griff"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+
+      <ion-label>Buford</ion-label>
+      <ion-radio slot="start" value="buford"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+
+  <ion-button expand="block" (click)="votar()">Votar</ion-button>
+</ion-content>

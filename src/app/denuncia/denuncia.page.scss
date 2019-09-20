@@ -1,0 +1,18 @@
+ion-toolbar {
+    --background: url('/assets/megaphone-illustration-vector.jpg') no-repeat center center / cover;
+    -webkit-background-size: cover;
+    color: black;
+    font-family: fantasy;  
+  }
+  
+ion-content {
+    --background: url('/assets/megaphone-illustration-vector.jpg') no-repeat center center / cover;
+  }
+ion-item{
+    --background: #3880ff;
+    --color: #fff;
+}
+
+ion-button{
+    --background: #062f77;
+}

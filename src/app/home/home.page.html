@@ -4,15 +4,15 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-segment (ionChange)="segmentChanged($event)" value="home">
-    <ion-segment-button value="home">
+  <ion-segment [(ngModel)]="category" (ionChange)="segmentChanged($event)" >
+    <ion-segment-button value="home" checked>
       <ion-icon name="home"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-segment-button>
@@ -22,116 +22,119 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-grid>
-  <ion-row>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/info.png"></div>
-      <span>Anori</span>
-    </ion-col>
-    <ion-col>
-      <div id="icon" (click)="openFutebol()"><img src="../../assets/icon/stadium.png"></div>
-      <span>Esporte</span>
-    </ion-col>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/laugh.png"></div>
-      <span>Lazer</span>
-    </ion-col>
-  </ion-row>
-  <br>
-   <ion-row>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/store.png"></div>
-      <span>Comercios</span>
-    </ion-col>
-    
-    <ion-col>
-      <div id="icon-rest"><img src="../../assets/icon/pizza-shop.png"></div>
-      <span>Restaurantes & Lanches</span>
-    </ion-col>
+  <div [ngSwitch]="category">
+      <ion-grid *ngSwitchCase="'home'">
+      <ion-row>
+        <ion-col (click)="openInfoAnori()">
+          <div id="icon"><img src="../../assets/icon/info.png"></div>
+          <span>Anori</span>
+        </ion-col>
+        <ion-col>
+          <div id="icon" (click)="openFutebol()"><img src="../../assets/icon/stadium.png"></div>
+          <span>Esporte</span>
+        </ion-col>
+        <ion-col (click)="openBingoTorneio()">
+          <div id="icon"><img src="../../assets/icon/laugh.png"></div>
+          <span>Bingos & Torneios</span>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col (click)="openMototaxi()">
+          <div id="icon"><img src="../../assets/icon/stunt.png"></div>
+          <span>Mototaxi</span>
+        </ion-col>
+        
+        <ion-col>
+          <div id="icon-rest"><img src="../../assets/icon/pizza-shop.png"></div>
+          <span>Restaurantes & Lanches</span>
+        </ion-col>
 
-    <ion-col>
-      <div id="icon" (click)="openHoteis()"><img src="../../assets/icon/hotel.png"></div>
-      <span>Hotéis</span>
-    </ion-col>
+        <ion-col>
+          <div id="icon" (click)="openHoteis()"><img src="../../assets/icon/hotel.png"></div>
+          <span>Hotéis</span>
+        </ion-col>
 
-  </ion-row>
-  <br>
-  <ion-row>
-    <ion-col>
-      <div id="icon" (click)="openIgrejas()"><img src="../../assets/icon/church.png"></div>
-      <span>Igrejas</span>
-    </ion-col>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/hospital.png"></div>
-      <span>Hospitais</span>
-    </ion-col>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/school.png"></div>
-      <span>Escolas</span>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/news.png"></div>
-      <span>noticias</span>
-    </ion-col>
-    <ion-col (click)="openPrefeitura()">
-      <div id="icon"><img src="../../assets/icon/town-hall.png"></div>
-      <span>prefeitura</span>
-    </ion-col>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/museum.png"></div>
-      <span>câmara municipal</span>
-    </ion-col>
-  </ion-row>
+      </ion-row>
+      
+      <!--<ion-row>
+        <ion-col>
+          <div id="icon" (click)="openIgrejas()"><img src="../../assets/icon/church.png"></div>
+          <span>Igrejas</span>
+        </ion-col>
+        <ion-col>
+          <div id="icon"><img src="../../assets/icon/hospital.png"></div>
+          <span>Hospitais</span>
+        </ion-col>
+        <ion-col>
+          <div id="icon"><img src="../../assets/icon/school.png"></div>
+          <span>Escolas</span>
+        </ion-col>
+      </ion-row>-->
+      <ion-row>
+        <ion-col (click)="openDenuncia()">
+          <div id="icon"><img src="../../assets/icon/news.png"></div>
+          <span>Denuncia</span>
+        </ion-col>
+        <ion-col (click)="openPrefeitura()">
+          <div id="icon"><img src="../../assets/icon/town-hall.png"></div>
+          <span>prefeitura</span>
+        </ion-col>
+        <ion-col>
+          <div id="icon" (click)="openIgrejas()"><img src="../../assets/icon/church.png"></div>
+          <span>Igrejas</span>
+        </ion-col>
+      </ion-row>
 
-   <ion-row>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/farmer.png"></div>
-      <span>mercado</span>
-    </ion-col>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/laugh.png"></div>
-      <span>eventos</span>
-    </ion-col>
-    <ion-col>
-      <div id="icon"><img src="../../assets/icon/cross.png"></div>
-      <span>nota de falecimento</span>
-    </ion-col>
-  </ion-row>
+      <!--<ion-row>
+        <ion-col>
+          <div id="icon"><img src="../../assets/icon/farmer.png"></div>
+          <span>mercado</span>
+        </ion-col>
+        <ion-col> 
+          <div id="icon"><img src="../../assets/icon/laugh.png"></div>
+          <span>eventos</span>
+        </ion-col>
+        <ion-col>
+          <div id="icon"><img src="../../assets/icon/cross.png"></div>
+          <span>nota de falecimento</span>
+        </ion-col>
+      </ion-row>-->
 
-</ion-grid>
+    </ion-grid>
 
-<!--<ion-grid>
-  <ion-row>
-    <ion-col >
-      <div id="img-news"><img src="../../assets/news/idam.jpg"></div>
-    </ion-col>
-    <ion-col>
-      <h6 id="titulo-news">Idam incentiva plantio de feijão em Canutama</h6>
-    </ion-col>
-  </ion-row>
-  <ul>
-    <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px; margin-left: -10%;"/>
-  </ul>
-  <ion-row>
-    <ion-col >
-      <div id="img-news"><img src="../../assets/news/mpf.jpg"></div>
-    </ion-col>
-    <ion-col>
-      <p id="titulo-news">MPF agi contra posseiros</p>
-    </ion-col>
-  </ion-row>
+    <ion-grid *ngSwitchCase="'noticias'">
+      <ion-row>
+        <ion-col >
+          <div id="img-news"><img src="../../assets/news/idam.jpg"></div>
+        </ion-col>
+        <ion-col>
+          <h6 id="titulo-news">Idam incentiva plantio de feijão em Canutama</h6>
+        </ion-col>
+      </ion-row>
+      <ul>
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px; margin-left: -10%;"/>
+      </ul>
+      <ion-row>
+        <ion-col >
+          <div id="img-news"><img src="../../assets/news/mpf.jpg"></div>
+        </ion-col>
+        <ion-col>
+          <p id="titulo-news">MPF agi contra posseiros</p>
+        </ion-col>
+      </ion-row>
 
-  <ul>
-    <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px; margin-left: -10%;"/>
-  </ul>
-  <ion-row>
-    <ion-col >
-      <div id="img-news"><img src="../../assets/news/porto.JPG"></div>
-    </ion-col>
-    <ion-col>
-      <p id="titulo-news">3 Municipios do AM tem portos reativados</p>
-    </ion-col>
-  </ion-row>
-</ion-grid>-->
+      <ul>
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px; margin-left: -10%;"/>
+      </ul>
+      <ion-row>
+        <ion-col >
+          <div id="img-news"><img src="../../assets/news/porto.JPG"></div>
+        </ion-col>
+        <ion-col>
+          <p id="titulo-news">3 Municipios do AM tem portos reativados</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
