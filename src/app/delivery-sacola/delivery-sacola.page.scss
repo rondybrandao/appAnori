@@ -1,0 +1,27 @@
+ion-toolbar {
+    --background: url('../../assets/delivery/header-img-01.jpg') no-repeat center center / cover;
+    -webkit-background-size: cover;
+    color: white;
+    font-family: fantasy;  
+    //width: 50%
+  }
+  
+ion-content {
+    --background: url('../../assets/bg.jpg') no-repeat center center / cover;
+    -webkit-background-size: cover;
+}
+
+ion-card {
+    background-color: white
+}
+ion-col {
+    font-size: 20px
+}
+
+#sub-total {
+    text-align: center
+}
+
+#sucesso-alert {
+    margin-top: 20px
+}

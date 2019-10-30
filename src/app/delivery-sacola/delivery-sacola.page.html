@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end" (click)="dismiss()">
+      <ion-icon size="large" name="close"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      DETALHES DA SACOLA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item *ngFor="let item of pedido; let i = index" >
+      <div slot="end" (click)="deletarItem(i)">
+        <ion-icon name="trash" ></ion-icon>
+      </div>
+      <ion-col>
+        <div>{{item.item}}</div>
+        <div><ion-note>qnt: {{item.qnt}}</ion-note></div>
+      </ion-col>
+      <ion-col id="sub-total">
+        R$ {{item.subTotal.toFixed(2)}}
+      </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col>
+        <div>Total</div>
+      </ion-col>
+      <ion-col id="total">
+        <strong>R$ {{ total.toFixed(2) }}</strong>
+      </ion-col>
+    </ion-item>
+  </ion-card>
+  <ion-item>
+    <ion-label position="floating">Troco para quanto ?</ion-label>
+    <ion-input type="number" [(ngModel)]="troco"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <h2>Endereço para entrega</h2>
+    <ion-label position="stacked">Endereço</ion-label>
+    <ion-input placeholder="Bairro"  [(ngModel)]="endereco.bairro"></ion-input>
+    <ion-input placeholder="Rua" [(ngModel)]="endereco.rua"></ion-input>
+    <ion-input placeholder="Numero da Casa" [(ngModel)]="endereco.casa"></ion-input>
+  </ion-item>
+  <ion-button expand="block" size="large" color="danger" (click)="enviarPedido()">FAZER PEDIDO</ion-button>
+  
+  <div id="sucesso-alert" *ngIf="ok">
+    <p>O pedido foi realizado com sucesso!</p>
+    <ion-button (click)="close()">Fechar</ion-button>
+  </div>
+</ion-content>

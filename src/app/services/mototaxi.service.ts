@@ -15,13 +15,13 @@ export class MototaxiService {
   savePedido(pedido) {
     console.log(pedido)
     console.log(this.id)
-    
+    var passageiro = 'Jon Do'
     return new Promise((resolve, reject) => {
       let id =  this.id 
       console.log(id)
       this.db.database.ref('pedidos').child(id).set({
         id: id,
-        nome: 'nomeDoUsuario',
+        passageiro: 'nomeDoUsuario',
         latitude: pedido.latitude,
         longitude: pedido.longitude,
         casa:pedido.casa,
@@ -35,7 +35,7 @@ export class MototaxiService {
         console.log(result['nome'])
         let nome = result['nome']
         let cont= result['cont']
-        this.sendMessageMoto(nome, id, cont, pedido.latitude, pedido.longitude)
+        this.sendMessageMoto(nome, id, cont, passageiro, pedido.casa, pedido.latitude, pedido.longitude)
         let res = {
           id:id, 
           mototaxista:result
@@ -45,12 +45,14 @@ export class MototaxiService {
     })
   }
 
-  sendMessageMoto(nome, numero, cont, latitude, longitude){
+  sendMessageMoto(nome, numero, cont, passageiro, casa, latitude, longitude){
     this.db.database.ref('mototaxista/teste').update({
       corrida:true,
       contCorrida: cont,
       pedido:{
         numero: numero,
+        passageiro: passageiro,
+        casa: casa,
         latitude: latitude,
         longitude: longitude
       }

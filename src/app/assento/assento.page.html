@@ -1,0 +1,261 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Poltronas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    
+    <ion-row>
+      <ion-col>
+        01
+        <ion-checkbox color="light" [(ngModel)]="poltronas[1]['01']" (ionChange)="escolherPoltrona($event,1)" 
+          disabled="{{poltronas[1].isDisabled}}" checked="{{poltronas[1]['01']}}">
+        </ion-checkbox>
+      </ion-col>
+      <ion-col>
+        02
+        <ion-checkbox color="light" disabled="{{poltronas[2].isDisabled}}" checked="{{poltronas[2]['02']}}"
+          (ionChange)="escolherPoltrona($event,2)">
+        </ion-checkbox>
+      </ion-col>
+      <ion-col>
+        03
+        <ion-checkbox color="light" [(ngModel)]="poltronas[3]['03']" (ionChange)="escolherPoltrona($event,3)"
+          disabled="{{poltronas[3].isDisabled}}" checked="{{poltronas[3]['03']}}">
+        </ion-checkbox>
+      </ion-col>
+      <ion-col>
+        
+        
+      </ion-col>
+      <ion-col>
+        04
+        <ion-checkbox color="light" [(ngModel)]="poltronas[4]['04']" (ionChange)="escolherPoltrona($event, 4)"
+          disabled="{{poltronas[4].isDisabled}}" checked="{{poltronas[4]['04']}}">
+        
+        </ion-checkbox>
+      </ion-col>
+      <ion-col>
+        05
+        <ion-checkbox color="light" [(ngModel)]="poltronas[5]['05']" (ionChange)="escolherPoltrona($event, 5)"
+          disabled="{{poltronas[5].isDisabled}}" checked="{{poltronas[5]['05']}}">
+        </ion-checkbox>
+      </ion-col>
+      <ion-col>
+        06
+        <ion-checkbox color="light" (ionChange)="escolherPoltrona($event, 6)"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        07
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        08
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        09
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+
+      <ion-col>
+        
+        
+      </ion-col>
+      <ion-col>
+        10
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <div id="onze">11</div> 
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        12
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        13
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        14
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        15
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        
+        
+      </ion-col>
+      <ion-col>
+        16
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        17
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        18
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        19
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        20
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        21
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        
+        
+      </ion-col>
+      <ion-col>
+        22
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        23
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        24
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        25
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        26
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        27
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        
+        
+      </ion-col>
+      <ion-col>
+        28
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        29
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        30
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        31
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        32
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        33
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        
+        
+      </ion-col>
+      <ion-col>
+        34
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        35
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        36
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        37
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        38
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        39
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        
+        
+      </ion-col>
+      <ion-col>
+        40
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        41
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        42
+        <ion-checkbox color="light"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  
+  <ion-card *ngFor="let p of poltronas_reservadas; let i = index">
+    <ion-row>
+        <ion-col>
+          <ion-item>
+            <h4>Poltrona: {{p}}</h4>
+            <ion-label position="floating">Passageiro</ion-label>
+            <ion-input [(ngModel)]="passageiros[i].nome"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">RG</ion-label>
+            <ion-input type="number" [(ngModel)]="passageiros[i].RG"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  </ion-card>
+  <ion-card id="card">
+    <h6>Concorda em participar da nossa campanha de divulgação? Criaremos uma fake-news com seu nome e anunciaremos em nossas paginas, tudo bem?</h6>
+    <ion-checkbox id="concordo" color="danger"></ion-checkbox> sim, Concordo
+  </ion-card>
+  <ion-button expand="block" (click)="openFakeNews()">RESERVAR</ion-button>
+</ion-content>

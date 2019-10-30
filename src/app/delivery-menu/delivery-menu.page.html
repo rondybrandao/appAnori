@@ -1,0 +1,387 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      MENU
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-segment id="info-fotos" (ionChange)="segmentChanged($event)">
+    <ion-segment-button layout="icon-start" id="info" value="info">
+     <img id="menu-img" src="assets/delivery/burger.png">
+      
+    </ion-segment-button>
+
+    <ion-segment-button layout="icon-start" id="fotos" value="refri">
+      <img id="promo-img" src="assets/delivery/cola.png">
+      
+    </ion-segment-button>
+
+    <ion-segment-button layout="icon-start" id="fotos" value="sobremesa">
+      <img id="promo-img" src="assets/delivery/cake.png">
+      
+    </ion-segment-button>
+    
+  </ion-segment>
+
+  <ion-button id="sacola" *ngIf="sacola.length > 0" expand="full" fill="outline" (click)="openSacolaModal()">ver pedidos</ion-button>
+  
+  <div [ngSwitch]="category"  id="category">
+    <!--<ion-slide>-->
+      <ion-card id="card-category" *ngSwitchCase="'info'">
+        <ion-item *ngFor="let item of sanduiches" (click)="pedidoDetalhesModal(item.nome, item.preco)">
+          <ion-label>
+            <h2 id="sanduiches-id">{{item.nome}}</h2>
+            <p>{{item.descricao}}</p>
+            <ion-note>R$ {{item.preco.toFixed(2)}}</ion-note>
+          </ion-label>
+          <!--<ion-button fill="outline" slot="end" (click)="pedidoDetalhesModal(item.nome, item.preco, item.descricao)">Pedir</ion-button>-->
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xsalada.jpg">
+          </ion-thumbnail>
+        </ion-item>
+        
+        <!--<ion-item>
+          <ion-label>
+            <h2 id="sanduiches-id">X-Burg - <ion-note>R$ 10,00</ion-note></h2>
+            <p>ovo, mussarela, presunto, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end" (click)="pedidoDetalhesModal()">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xsalada.jpg">
+          </ion-thumbnail>
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>-->
+      </ion-card>
+
+      <!-- REFRIGERANTE -->
+      <ion-card id="card-category" *ngSwitchCase="'refri'">
+        <ion-item>
+          <ion-label>
+            <h2 id="sanduiches-id">Coca-cola - <ion-note>R$ 5,00</ion-note></h2>
+            <p>latinha 360ml</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end" (click)="pedidoDetalhesModal()">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xsalada.jpg">
+          </ion-thumbnail>
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">Cola-cola - <ion-note>R$ 5,00</ion-note></h2>
+            <p>Pet 2 Litros</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">Baré - <ion-note>R$ 5,00</ion-note></h2>
+            <p>Lata 360ml</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">Baré - <ion-note>R$ 5,00</ion-note></h2>
+            <p>Pet 2L</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        
+      </ion-card>
+
+      <!-- SOBREMESA -->
+      <ion-card id="card-category" *ngSwitchCase="'sobremesa'">
+        <ion-item>
+          <ion-label>
+            <h2 id="sanduiches-id">Cupe-cake - <ion-note>R$ 10,00</ion-note></h2>
+            <p>chocolate</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end" (click)="pedidoDetalhesModal()">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xsalada.jpg">
+          </ion-thumbnail>
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">Cupe-cake - <ion-note>R$ 5,00</ion-note></h2>
+            <p>Baunilha</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">Brigadeiro - <ion-note>R$ 5,00</ion-note></h2>
+            <p>Chocolate</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+  
+      </ion-card>
+    
+  </div>
+
+</ion-content>
+
+
+
+
+<!--
+<ion-slides  id="category">
+    <ion-slide [hidden]="!slide">
+      <ion-card id="card-category" >
+        <ion-item>
+          <ion-label>
+            <h2 id="sanduiches-id">X-Burg - <ion-note>R$ 10,00</ion-note></h2>
+            <p>ovo, mussarela, presunto, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end" (click)="pedidoDetalhesModal()">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xsalada.jpg">
+          </ion-thumbnail>
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+
+        <ion-item href="#">
+          <ion-label>
+            <h2 id="sanduiches-id">X-Salada - <ion-note>R$ 5,00</ion-note></h2>
+            <p>ovo, alface, tomate, cebola, hamburg</p>
+          </ion-label>
+          <ion-button fill="outline" slot="end">Pedir</ion-button>
+          <ion-thumbnail slot="end">
+            <img src="assets/delivery/xburg.jpg">
+          </ion-thumbnail>
+          
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide [hidden]="!slide_promo">
+          
+        <ion-slides [options]="sliderOpts">
+          <ion-slide>
+            <ion-card>
+              <img src="assets/delivery/promo-01.jpg">
+            </ion-card>
+          </ion-slide>
+          <ion-slide>
+            <img src="assets/delivery/promo-02.jpg">
+          </ion-slide>
+          <ion-slide>
+            <img src="assets/delivery/promo-03.jpg">
+          </ion-slide>
+        </ion-slides>
+    
+  </ion-slide>
+  
+  </ion-slides>
+  -->

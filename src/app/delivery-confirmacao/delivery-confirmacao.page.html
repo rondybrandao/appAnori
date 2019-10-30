@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end" (click)="dismiss()">
+      <ion-icon size="large" name="close"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      DETALHES DO PEDIDO
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+        <img src="assets/delivery/xburg.jpg">
+        <ion-card-header>
+          <ion-card-subtitle>R$ {{ valorItem }}</ion-card-subtitle>
+          <ion-card-title>{{ item }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ descricao }}</p>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="stacked" >Voçe tem alguma observação?</ion-label>
+          <ion-input placeholder="Ex: Tirar cebola e alface"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col size="6">
+            <div class="section">
+                        <h6 class="title-attr"><small>QNT</small></h6>                    
+                        <div>
+                            <div class="btn-minus" (click)="diminuir()"><ion-icon name="remove-circle-outline"></ion-icon></div>
+                            <input value="{{ qnt }}" />
+                            <div class="btn-plus" (click)="plus()"><ion-icon name="add-circle-outline"></ion-icon></div>
+                        </div>
+                    </div>     
+          </ion-col>
+          <ion-col size="6" id="button-adcionar">
+            <ion-button expand="block" type="submit" class="ion-no-margin" (click)="addCarrinho(item, qnt)">Adcionar R${{sub_total.toFixed(2)}}</ion-button>
+          </ion-col>
+        </ion-row>
+        
+        
+      </ion-card>
+</ion-content>

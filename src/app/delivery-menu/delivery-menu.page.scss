@@ -1,0 +1,79 @@
+ion-toolbar {
+    --background: url('../../assets/delivery/header-img-01.jpg') no-repeat center center / cover;
+    -webkit-background-size: cover;
+    color: white;
+    font-family: fantasy;  
+    //width: 50%
+  }
+  
+ion-content {
+    --background: red;
+    -webkit-background-size: cover;
+  }
+
+ion-card {
+    background-color: yellow;
+    color: black;
+    font-family: cursive;
+}
+
+ion-segment-button {
+    background-color: yellow
+}
+
+h2 {
+    margin-top: 0px;
+    font-size: 25px;
+}
+
+
+#info-fotos {
+    margin-top: -10px;
+    //margin-left: 9px;
+    padding: 10px;
+    padding-top: 1px
+}
+#info{
+    //text-align: center;
+    border: outset;
+    border-width: 2px
+}
+#fotos {
+    //text-align: center;
+    border: outset;
+    border-width: 2px
+}
+
+#ligar {
+    //text-align: center;
+    border: outset;
+    border-width: 2px
+}
+
+#category {
+    margin-top: -18px;
+}
+#card-category {
+    padding-bottom: 30px;
+}
+
+#menu-img {
+    width: 30px
+}
+#promo-img {
+    width: 30px
+}
+
+#sanduiches-id {
+    font-size: 17px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+#sacola {
+    margin-top: -10px;
+    margin-bottom: 18px;
+    margin-right: 9px;
+    margin-left: 9px;
+    color: aliceblue;
+    background-color: deeppink;
+}

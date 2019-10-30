@@ -1,0 +1,52 @@
+ion-content {
+    background-image: url('/assets/suse-logo-04.jpg');
+}
+// .container {
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     width: 75%;
+//     margin: 0 auto;
+//     z-index: 2;
+
+//     &.top {
+//         top: 5%;
+//     }
+
+//     &.bottom {
+//         bottom: 10%;
+
+//         span {
+//             color: #fff;
+//         }
+//     }
+// }
+
+ion-segment {
+    margin-top: -45px;
+}
+.sc-ion-segment-ios-h {
+    --background: #fff;
+    --background-checked: var(--ion-color-danger)
+}
+
+ion-slides {
+    //height: 100%;
+    background-color: #2678e4;
+    
+    .slide-inner {
+        width: 75%;
+        color: #fff;
+        background-color: #0072bc;
+        border-radius: 10px;
+        margin-top: 20px;
+        ion-item {
+            --background: rgba(255, 255, 255, 0.2);
+            --border-radius: 10px;
+
+            ion-input {
+                --color: #fff;
+            }
+        }
+    }
+}

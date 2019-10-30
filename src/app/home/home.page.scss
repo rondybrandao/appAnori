@@ -2,7 +2,7 @@ ion-header {
   height: 150px;
 }
 ion-toolbar {
-  --background: url('../../assets/logo-appAnori.jpg') no-repeat center center / cover;
+  --background: url('../../assets/suse-logo-04.jpg') no-repeat center center / cover;
   -webkit-background-size: cover;
   color: white;
   font-family: fantasy;
@@ -23,6 +23,7 @@ ion-title {
 }
 ion-menu-button {
   color: white;
+  margin-top: 40px
 }
 ion-col {
 padding-left: 20px
@@ -35,9 +36,16 @@ h2 {
 margin-top: -55px;
 }
 #icon {
-width:80%;
+  width: 100%;
+  height: 70%;
+}
+
+#icon-info {
+  width: 60px;
+  margin-top: 15px;
 }
 #icon-rest {
-width:75%;
-margin-top: -10%
+  width: 87%;
+  margin-left: -5px;
+  margin-top: -6%;
 }

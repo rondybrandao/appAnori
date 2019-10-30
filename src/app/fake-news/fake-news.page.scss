@@ -1,0 +1,23 @@
+ion-header {
+  height: 75px;
+}
+ion-toolbar {
+    --background: url('../../assets/fake-news/fake-news.jpg') no-repeat center center / cover;
+    -webkit-background-size: cover;
+    color: black;
+    font-family: fantasy;  
+    height: 75px;
+  }
+  
+ion-content {
+    --background: url('../../assets/bg.jpg') no-repeat center center / cover;
+  }
+
+ion-card-content {
+    background-color: honeydew;
+}
+
+#titulo-fake {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px
+}

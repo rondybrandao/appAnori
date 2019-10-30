@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Zueira-News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/fake-news/globonews.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2><strong>GoboNews</strong></h2>
+        <p>Outubro 01, 2019</p>
+      </ion-label>
+    </ion-item>
+    <!--<div id="titulo-fake">Titulo da materia</div>-->
+    <img src="assets/fake-news/globonews-02.jpeg">
+    <ion-card-header>
+      <ion-card-subtitle>Anori</ion-card-subtitle>
+      <ion-card-title>Bares de Anori prometem não abrir depois de saberem que {{ passageiro }} chegaria na cidade.</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>O bares da cidade de Anori entraram em greve ao saber que {{ passageiro | json }} chegará a cidade em breve, o motivo segundo eles é que {{ this.passageiro | json }} chora muito ao beber.</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+      
+      </ion-col>
+      <ion-col>
+        
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          11h atrás
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <!--<ion-card *ngIf="afAuth.user | async as user">
+    <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/fake-news/globonews.jpg">
+    </ion-avatar>
+    <ion-label>
+      <h2><strong>GoboNews</strong></h2>
+      <p>Outubro 01, 2019</p>
+    </ion-label>
+  </ion-item>
+  <div id="titulo-fake">Titulo da materia</div>
+  <img src="assets/fake-news/globonews-02.jpeg">
+  <ion-card-header>
+    <ion-card-subtitle>Anori</ion-card-subtitle>
+    <ion-card-title>Bares de Anori prometem não abrir depois de saberem que {{user.displayName}} chegaria na cidade.</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p>O bares da cidade de Anori entraram em greve ao saber que {{ user.displayName }} chegará a cidade em breve, o motivo segundo eles é que {{ user.displayName}} chora muito ao beber.</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+     
+    </ion-col>
+    <ion-col>
+      
+    </ion-col>
+    <ion-col align-self-center text-center>
+      <ion-note>
+        11h atrás
+      </ion-note>
+    </ion-col>
+  </ion-row>
+  </ion-card>-->
+</ion-content>

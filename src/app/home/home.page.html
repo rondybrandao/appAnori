@@ -22,20 +22,21 @@
     </ion-segment-button>
   </ion-segment>
 
-  <div [ngSwitch]="category">
-      <ion-grid *ngSwitchCase="'home'">
+  <ion-slides>
+    <ion-slide>
+      <ion-grid>
       <ion-row>
         <ion-col (click)="openInfoAnori()">
-          <div id="icon"><img src="../../assets/icon/info.png"></div>
+          <div id="icon-info"><img src="../../assets/icon/info.png"></div>
           <span>Anori</span>
         </ion-col>
         <ion-col>
           <div id="icon" (click)="openFutebol()"><img src="../../assets/icon/stadium.png"></div>
           <span>Esporte</span>
         </ion-col>
-        <ion-col (click)="openBingoTorneio()">
-          <div id="icon"><img src="../../assets/icon/laugh.png"></div>
-          <span>Bingos & Torneios</span>
+        <ion-col (click)="openPassagens()">
+          <div id="icon"><img src="../../assets/icon/check-in.png"></div>
+          <span>Passagens</span>
         </ion-col>
       </ion-row>
       <br>
@@ -45,16 +46,16 @@
           <span>Mototaxi</span>
         </ion-col>
         
-        <ion-col>
+        <ion-col (click)="openDelivery()">
           <div id="icon-rest"><img src="../../assets/icon/pizza-shop.png"></div>
-          <span>Restaurantes & Lanches</span>
+          <span>Delivery</span>
         </ion-col>
 
         <ion-col>
           <div id="icon" (click)="openHoteis()"><img src="../../assets/icon/hotel.png"></div>
           <span>Hotéis</span>
         </ion-col>
-
+        
       </ion-row>
       
       <!--<ion-row>
@@ -88,8 +89,8 @@
 
       <!--<ion-row>
         <ion-col>
-          <div id="icon"><img src="../../assets/icon/farmer.png"></div>
-          <span>mercado</span>
+          <div id="icon" (click)="openFake()"><img src="../../assets/icon/icon-fake-news.png"></div>
+          <span>zueira-news</span>
         </ion-col>
         <ion-col> 
           <div id="icon"><img src="../../assets/icon/laugh.png"></div>
@@ -100,16 +101,17 @@
           <span>nota de falecimento</span>
         </ion-col>
       </ion-row>-->
+      </ion-grid>
+    </ion-slide>
 
-    </ion-grid>
-
-    <ion-grid *ngSwitchCase="'noticias'">
+    <ion-slide>
+      <ion-grid>
       <ion-row>
         <ion-col >
-          <div id="img-news"><img src="../../assets/news/idam.jpg"></div>
+          <div id="img-news"><img src="../../assets/news/Jair-Souto-e-Jamilson-Carvalho.jpg"></div>
         </ion-col>
         <ion-col>
-          <h6 id="titulo-news">Idam incentiva plantio de feijão em Canutama</h6>
+          <h6 id="titulo-news"><a href="https://bncamazonas.com.br/municipios/prefeitos-anori-manaquiri-alerta-tce"> TCE manda alerta para prefeito de Anori por uso de verbas</a></h6>
         </ion-col>
       </ion-row>
       <ul>
@@ -117,10 +119,10 @@
       </ul>
       <ion-row>
         <ion-col >
-          <div id="img-news"><img src="../../assets/news/mpf.jpg"></div>
+          <div id="img-news"><img src="../../assets/news/futebol.jpeg"></div>
         </ion-col>
         <ion-col>
-          <p id="titulo-news">MPF agi contra posseiros</p>
+          <p id="titulo-news"><a href="https://www.acritica.com/channels/esportes/news/amazonas-fc-anuncia-elenco-e-comissao-tecnica-para-a-serie-b-do-barezao">O meia atacante Andrey comentou sobre a chance de poder atuar no profissional pela primeira vez</a></p>
         </ion-col>
       </ion-row>
 
@@ -129,12 +131,14 @@
       </ul>
       <ion-row>
         <ion-col >
-          <div id="img-news"><img src="../../assets/news/porto.JPG"></div>
+          <div id="img-news"><img src="../../assets/news/Palestra.jpg"></div>
         </ion-col>
         <ion-col>
-          <p id="titulo-news">3 Municipios do AM tem portos reativados</p>
+          <p id="titulo-news"><a href="https://www.fatoamazonico.com/oficina-reune-representantes-de-40-municipios-para-tracar-novas-estrategias-de-controle-da-malaria-no-am/">Anori participa de oficina</a></p>
         </ion-col>
       </ion-row>
-    </ion-grid>
-  </div>
+      </ion-grid>
+    </ion-slide>
+  
+  </ion-slides>
 </ion-content>

@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-var disqus_config = function () {
-  this.page.url = '/about';  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = 'appanoriesporte'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
+// var disqus_config = function () {
+//   this.page.url = '/about';  // Replace PAGE_URL with your page's canonical URL variable
+//   this.page.identifier = 'appanoriesporte'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+//   };
 
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://appanoriesporte.disqus.com/embed.js';
-  s.setAttribute('data-timestamp',  '15/09/2019');
-  (d.head || d.body).appendChild(s);
-  })();
+//   (function() { // DON'T EDIT BELOW THIS LINE
+//   var d = document, s = d.createElement('script');
+//   s.src = 'https://appanoriesporte.disqus.com/embed.js';
+//   s.setAttribute('data-timestamp',  '15/09/2019');
+//   (d.head || d.body).appendChild(s);
+//   })();
 
   
 @Component({

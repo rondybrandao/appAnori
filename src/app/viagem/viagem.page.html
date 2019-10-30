@@ -1,0 +1,215 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Escolha sua viagem 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-radio-group [(ngModel)]="viagem.itinerario">
+    <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Ida</ion-label>
+        <ion-radio slot="start" value="ida" checked ></ion-radio>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label>Ida e Volta</ion-label>
+        <ion-radio slot="start" value="idaVolta" ></ion-radio>
+      </ion-item>
+    </ion-col>
+    </ion-row>
+  
+  </ion-radio-group>
+  <ion-item>
+    <ion-label>Origem</ion-label>
+    <ion-select value="ANORI" okText="Confirmar" cancelText="Cancelar" [(ngModel)]="viagem.origem" required>
+      <ion-select-option value="ANORI">Anori</ion-select-option>
+      <ion-select-option value="ANAMA">Anamã</ion-select-option>
+      <ion-select-option value="MANAUS">Manaus</ion-select-option>
+      <ion-select-option value="MANACAPURU">Manacapuru</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Destino</ion-label>
+    <ion-select value="ANORI" okText="Confirmar" cancelText="Cancelar" [(ngModel)]="viagem.destino">
+      <ion-select-option value="ANORI">Anori</ion-select-option>
+      <ion-select-option value="ANAMA">Anamã</ion-select-option>
+      <ion-select-option value="MANAUS">Manaus</ion-select-option>
+      <ion-select-option value="MANACAPURU">Manacapuru</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!--<ion-item>
+    <ion-label>Data da Ida</ion-label>
+    <ion-datetime value="2019-09-15" min="2019-08" max="2019-12-31" [(ngModel)]="viagem.data"
+      [dayShortNames]="customDayShortNames"
+      displayFormat="DDD. DD MMM"
+      monthShortNames="jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez" required></ion-datetime>
+  </ion-item>-->
+
+  <ion-item (click)="calendario()">
+    <ion-label>Data da Ida</ion-label>{{ ida }}
+    
+  </ion-item>
+
+  <ion-card *ngIf="calendar">
+    <div class="calendar-header">
+    <ion-row class="calendar-month">
+      <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+      <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
+      <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
+    </ion-row>
+  </div>
+  <div class="calendar-body">
+    <ion-grid>
+      <ion-row class="calendar-weekday">
+        <ion-col>Do</ion-col>
+        <ion-col>Se</ion-col>
+        <ion-col>Te</ion-col>
+        <ion-col>Qua</ion-col>
+        <ion-col>Qui</ion-col>
+        <ion-col>Se</ion-col>
+        <ion-col>Sa</ion-col>
+      </ion-row>
+      <ion-row class="calendar-date">
+        <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</ion-col>
+        <ion-col col-1 *ngFor="let day of daysInThisMonth" (click)="addEvent(day)">
+          <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+          <ng-template #otherDate class="otherDate">
+            {{day}}<br>
+            <div class="event-bullet" *ngIf="checkEvent(day)"></div>
+          </ng-template>
+        </ion-col>
+        <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="selected-event" *ngIf="isSelected">
+    <ion-list>
+      <ion-item *ngFor="let se of selectedEvent">
+        <ion-buttons end>
+          <button ion-button clear icon-only>
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+        <h2>{{se.title}}</h2>
+        <h3>{{se.message}}</h3>
+        <p>Start Date: {{se.startDate}}<br>
+        Start Date: {{se.endDate}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+  </ion-card>
+
+  <!--<ion-item *ngIf="viagem.itinerario == 'idaVolta'">
+    <ion-label>Data da volta</ion-label>
+    <ion-datetime value="2019-09-15" min="2019-08" max="2019-12-31" [(ngModel)]="viagem.volta"
+      [dayShortNames]="customDayShortNames"
+      displayFormat="DDD. DD MMM"
+      monthShortNames="jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez"></ion-datetime>
+  </ion-item>-->
+
+  <ion-item *ngIf="viagem.itinerario == 'idaVolta'" (click)="voltaMetodo()">
+    <ion-label>Data da volta</ion-label> {{volta}}
+  </ion-item>
+
+  <ion-card *ngIf="viagemVolta">
+    <div class="calendar-header">
+    <ion-row class="calendar-month">
+      <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+      <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
+      <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
+    </ion-row>
+  </div>
+  <div class="calendar-body">
+    <ion-grid>
+      <ion-row class="calendar-weekday">
+        <ion-col>Do</ion-col>
+        <ion-col>Se</ion-col>
+        <ion-col>Te</ion-col>
+        <ion-col>Qua</ion-col>
+        <ion-col>Qui</ion-col>
+        <ion-col>Se</ion-col>
+        <ion-col>Sa</ion-col>
+      </ion-row>
+      <ion-row class="calendar-date">
+        <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</ion-col>
+        <ion-col col-1 *ngFor="let day of daysInThisMonth" (click)="addVolta(day)">
+          <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+          <ng-template #otherDate class="otherDate">
+            {{day}}<br>
+            <div class="event-bullet" *ngIf="checkEvent(day)"></div>
+          </ng-template>
+        </ion-col>
+        <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="selected-event" *ngIf="isSelected">
+    <ion-list>
+      <ion-item *ngFor="let se of selectedEvent">
+        <ion-buttons end>
+          <button ion-button clear icon-only>
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+        <h2>{{se.title}}</h2>
+        <h3>{{se.message}}</h3>
+        <p>Start Date: {{se.startDate}}<br>
+        Start Date: {{se.endDate}}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+  </ion-card>
+
+  <ion-item>
+      <ion-label>Quantidade</ion-label>
+          <ion-select value="1" interface="popover" [(ngModel)]="viagem.qnt">
+            <ion-select-option value="1">01</ion-select-option>
+            <ion-select-option value="2">02</ion-select-option>
+            <ion-select-option value="3">03</ion-select-option>
+            <ion-select-option value="4">04</ion-select-option>
+            <ion-select-option value="5">05</ion-select-option>
+            <ion-select-option value="6">06</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+  
+
+  
+
+  <ion-button expand="block" (click)="pesquisar_passagem()">Pesquisar</ion-button>
+  <!--<ion-button expand="block" (click)="addViagem()">addViagem()</ion-button>-->
+
+  <ion-card *ngIf="barco">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-thumbnail>
+            <ion-label>
+              <h3>{{ barco }}</h3>
+              <p>R${{ valor }},00</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-button color="primary" (click)="openCompra()">Comprar</ion-button>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

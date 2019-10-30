@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      DELIVERY
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-grid>
+    <ion-row>
+        <ion-col size="6"><img src="assets/delivery/botecodopretinho.jpg">
+           <div >
+            <ion-icon id="star-icon" name="star" *ngFor="let num of [1,2,3,4,5]"
+              (click)="rate(num)" [ngStyle]="{'color':getColor(num)}"></ion-icon>
+              
+          </div>
+            (7 avaliações)
+        </ion-col>
+        <ion-col size="6">
+          <h2 classe="hotel-nome"><strong>Lanche do Pretinho</strong></h2>
+          <ion-row>
+            <div ><ion-note>tempo de espera</ion-note></div>
+            <div>30 - 45 min</div>
+            
+          </ion-row>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-segment id="info-fotos" (ionChange)="segmentChanged($event)">
+    <ion-segment-button layout="icon-start" id="info" value="info">
+     <img id="menu-img" src="assets/delivery/food-and-restaurant.png">
+      <ion-label>Cardapio</ion-label>
+    </ion-segment-button>
+    <ion-segment-button layout="icon-start" id="fotos" value="fotos">
+      <img id="promo-img" src="assets/delivery/coupon.png">
+      <ion-label>Promoções</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-button id="sacola" *ngIf="pedido.qnt > 0" expand="full" fill="outline" (click)="openSacolaModal()">ver pedidos</ion-button>
+  
+</ion-content>
+

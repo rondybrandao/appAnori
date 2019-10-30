@@ -4,3 +4,63 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+
+// Sidemenu with avatar
+#menu-avatar {
+    .user-avatar {
+      max-width: 125px;height: 125px;
+      padding: .5em;
+    }
+    h3,
+    .label {
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .item {
+      background: transparent;
+    }
+    ion-content {
+  
+      background: #649173;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+    }
+    .menu-inner {
+      background: rgba(255, 255, 255, .3);
+    }
+  }
+
+  // Material Design Sidemenu
+#menu-material {
+    .menu-header {
+      padding: 5px 15px;
+      background-image: url('../assets/bg.jpg');
+      background-size: cover;
+      color: black;
+      .name {
+        font-weight: 500;
+        margin-bottom: 3px;
+      }
+      .e-mail {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+    }
+    .user-avatar {
+      max-width: 125px;height: 125px;
+      padding: .5em;
+      height: 12vh;
+    }
+    h3,
+    .label
+    {
+      color: #999;
+      font-weight: 400;
+    }
+    ion-icon {
+      color: #777;
+    }
+  }

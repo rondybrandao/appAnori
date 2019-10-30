@@ -1,0 +1,101 @@
+ion-toolbar {
+    --background: url('../../assets/hotel/quarto-de-hotel.jpg') no-repeat center center / cover;
+    -webkit-background-size: cover;
+    color: white;
+    font-family: fantasy;  
+  }
+  
+ion-content {
+    --background: url('../../assets/bg.jpg') no-repeat center center / cover;
+  }
+
+h2 {
+    margin-top: -3px;
+}
+.hotel-nome {
+    margin-top: -3px;
+    font-size: 24px;
+}
+ion-label .valor-quarto {
+    font-size: 20px
+}
+
+#star-icon {
+    font-size: 23px
+}
+
+#info-fotos {
+    margin-top: -10px;
+    //margin-left: 9px;
+    padding: 9px;
+    padding-top: 1px
+}
+#info{
+    //text-align: center;
+    border: outset;
+    border-width: 2px
+}
+#fotos {
+    //text-align: center;
+    border: outset;
+    border-width: 2px
+}
+
+#ligar {
+    //text-align: center;
+    border: outset;
+    border-width: 2px
+}
+
+#category {
+    margin-top: -18px;
+}
+#card-category {
+    padding-bottom: 30px;
+}
+#wifi-img {
+    width: 20px;
+    padding-top: 33px;
+    padding-bottom: 6px;
+    margin-left: 27px;
+}
+#wifi {
+    text-align: center;
+    padding-top: 3px
+}
+#ar-img {
+    width: 30px;
+    padding-top: 27px;
+    padding-bottom: 6px;
+    margin-left: 27px;
+}
+#ar {
+    text-align: center;
+    padding-top: 3px
+}
+
+#cama-img {
+    width: 30px;
+    padding-top: 27px;
+    padding-bottom: 6px;
+    margin-left: 27px;
+}
+#cama {
+    text-align: center;
+    padding-top: 3px
+}
+
+#frigobar-img {
+    width: 30px;
+    padding-top: 27px;
+    padding-bottom: 6px;
+    margin-left: 27px;
+}
+#frigobar {
+    text-align: center;
+    padding-top: 3px
+}
+
+#fotos-img {
+    width: 100px
+}

@@ -1,6 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>mototaxi</ion-title>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      MOTOTAXI
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -34,7 +39,7 @@
       <ion-input [(ngModel)]="referencia"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" (click)="callMototaxi()">Chamar Mototaxi</ion-button>
+    <ion-button expand="block" (click)="presentAlert()">Chamar Mototaxi</ion-button>
     <ion-card *ngIf="nome_mototaxista">
       Mototaxista: <h3>{{this.nome_mototaxista}}</h3>
       Placa: <h5>XXX001</h5>
