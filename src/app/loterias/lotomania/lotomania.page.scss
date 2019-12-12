@@ -1,0 +1,147 @@
+ion-toolbar {
+  --background: #ff8000;
+  color: white;
+  font-family: fantasy;
+}
+
+ion-content {
+  --background: url('/assets/bg.jpg') no-repeat center center / cover;
+}
+ion-card {
+  --background: #ff8000;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
+ion-note {
+    --color: #000000;
+    font-family: fantasy;
+    font-size: 20px;
+    padding: 2px;
+  }
+  
+.title-md {
+  padding-top: 10px;
+  text-align: center
+  }
+
+.card {
+  padding-bottom: 9px;
+}
+
+q::before {
+    content: counter(meucontador);
+  }
+  .contador {
+    counter-increment: meucontador;
+  }
+  
+  .minha-classe {
+    counter-reset: meuContador;
+  }
+
+  .resultados {
+    color: black;
+    //font-family: fantasy;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 23px;
+  }
+  span {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  #aposta {
+    padding-left: 3px;
+    padding-bottom: 3px;
+    letter-spacing: 3px;
+  }
+  
+  #aposta-label {
+    color: #f00
+  }
+  #palpite {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    padding-inline-start: 0px;
+  }
+  #n_sorteio {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+    
+  
+ul {
+    list-style-type: none;
+    padding-inline-start: 3px;
+    padding-inline-end: 0px;
+    padding-top: 50px;
+}
+    
+li {
+    display: inline-block;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+    
+    input[type="checkbox"][id^="cb"] {
+      display: none;
+    }
+    
+    label {
+      border: 0px solid #fff;
+      padding: 0px;
+      display: block;
+      position: relative;
+      margin: 0px;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    label::before {
+      background-color: white;
+      color: white;
+      content: " ";
+      display: block;
+      border-radius: 50%;
+      border: 1px solid grey;
+      position: absolute;
+      top: -5px;
+      left: 0px;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 28px;
+      transition-duration: 0.4s;
+      transform: scale(0);
+    }
+    
+    label img {
+      height: 100px;
+      width: 100px;
+      transition-duration: 0.2s;
+      transform-origin: 50% 50%;
+    }
+    
+    :checked+label {
+      border-color: #ddd;
+    }
+    
+    :checked+label::before {
+      content: "✓";
+      background-color: grey;
+      transform: scale(0.5);
+    }

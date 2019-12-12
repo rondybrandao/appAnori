@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>minhasNotificacoes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of list_notificacoes ">
+    <div *ngFor="let i of item.item">Poltrona: {{ i.poltrona }}</div>
+  </ion-card>
+</ion-content>

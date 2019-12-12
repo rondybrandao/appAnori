@@ -103,28 +103,29 @@ export class DeliveryPage implements OnInit {
     this.navCtrl.navigateForward('delivery-confirmacao')
   }
 
-  async pedidoDetalhesModal() {
-    const modal = await this.modalController.create({
-      component: DeliveryConfirmacaoPage,
-      componentProps: {
-        'sanduiche': 'X-Burg',
-        'preco': 10
-      }
-    });
-    await modal.present();
-    const { data } = await modal.onWillDismiss();
-    console.log(data)
-    console.log(data.data.qnt)
-    this.pedido['qnt'] = data.data.qnt
-    console.log(this.pedido['qnt'])
+  // async pedidoDetalhesModal() {
+  //   const modal = await this.modalController.create({
+  //     component: DeliveryConfirmacaoPage,
+  //     componentProps: {
+  //       'sanduiche': 'X-Burg',
+  //       'preco': 10
+  //     }
+  //   });
+  //   await modal.present();
+  //   const { data } = await modal.onWillDismiss();
+  //   console.log(data)
+  //   console.log(data.data.qnt)
+  //   this.pedido['qnt'] = data.data.qnt
+  //   console.log(this.pedido['qnt'])
     
-  }
+  // }
 
   async openSacolaModal() {
     const modal = await this.modalController.create({
       component: DeliverySacolaPage,
       componentProps: {
-        'pedido': this.pedido
+        pedido: this.pedido,
+        empresa:'Lanche do Pretinho'
       }
     });
     await modal.present();

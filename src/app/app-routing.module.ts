@@ -15,12 +15,13 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule',
     canActivate: [AuthGuard]
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
-  { path: 'futebol', loadChildren: './futebol/futebol.module#FutebolPageModule' },
-  { path: 'times', loadChildren: './times/times.module#TimesPageModule' },
+  
+  // {
+  //   path: 'list',
+  //   loadChildren: './list/list.module#ListPageModule'
+  // },
+  // { path: 'futebol', loadChildren: './futebol/futebol.module#FutebolPageModule' },
+  // { path: 'times', loadChildren: './times/times.module#TimesPageModule' },
   { path: 'prefeitura', loadChildren: './prefeitura/prefeitura.module#PrefeituraPageModule' },
   { path: 'denuncia', loadChildren: './denuncia/denuncia.module#DenunciaPageModule' },
   { path: 'bingo-torneio', loadChildren: './bingo-torneio/bingo-torneio.module#BingoTorneioPageModule' },
@@ -40,7 +41,14 @@ const routes: Routes = [
   { path: 'delivery-sacola', loadChildren: './delivery-sacola/delivery-sacola.module#DeliverySacolaPageModule' },
   { path: 'fake-news', loadChildren: './fake-news/fake-news.module#FakeNewsPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule', canActivate: [LoginGuard] },
-  { path: 'delivery-menu', loadChildren: './delivery-menu/delivery-menu.module#DeliveryMenuPageModule' }
+  { path: 'delivery-menu', loadChildren: './delivery-menu/delivery-menu.module#DeliveryMenuPageModule' },
+  { path: 'megasena', loadChildren: './loterias/megasena/megasena.module#MegasenaPageModule' },
+  { path: 'loteria', loadChildren: './loterias/loteria/loteria.module#LoteriaPageModule' },
+  { path: 'lotofacil', loadChildren: './loterias/lotofacil/lotofacil.module#LotofacilPageModule' },
+  { path: 'lotomania', loadChildren: './loterias/lotomania/lotomania.module#LotomaniaPageModule' },
+  { path: 'minhas-notificacoes', loadChildren: './minhas-notificacoes/minhas-notificacoes.module#MinhasNotificacoesPageModule' },
+  { path: 'comprovantes', loadChildren: './comprovantes/comprovantes.module#ComprovantesPageModule' },
+  
 ];
 
 @NgModule({

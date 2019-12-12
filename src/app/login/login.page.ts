@@ -25,7 +25,9 @@ export class LoginPage implements OnInit {
     public afAuth: AngularFireAuth,
     private  loginService:  LoginService, 
     
-  ) { }
+  ) { 
+    this.userRegister.time = ""
+  }
 
   ngOnInit() {}
  

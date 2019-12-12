@@ -72,7 +72,8 @@
         <ion-checkbox color="light"></ion-checkbox>
       </ion-col>
       <ion-col>
-        <div id="onze">11</div> 
+        <!--<div id="onze">11</div>-->
+        11
         <ion-checkbox color="light"></ion-checkbox>
       </ion-col>
       <ion-col>
@@ -237,25 +238,30 @@
     </ion-row>
     
   </ion-grid>
-  
-  <ion-card *ngFor="let p of poltronas_reservadas; let i = index">
-    <ion-row>
-        <ion-col>
-          <ion-item>
-            <h4>Poltrona: {{p}}</h4>
-            <ion-label position="floating">Passageiro</ion-label>
-            <ion-input [(ngModel)]="passageiros[i].nome"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">RG</ion-label>
-            <ion-input type="number" [(ngModel)]="passageiros[i].RG"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-  </ion-card>
+  <section *ngIf="poltronas_reservadas.poltrona != ''">
+    <ion-card *ngFor="let p of poltronas_reservadas; let i = index">
+      <ion-row>
+          <ion-col>
+            <ion-item>
+              <h4>Poltrona: {{p.poltrona}}</h4>
+              <ion-label position="floating">Passageiro</ion-label>
+              <ion-input [(ngModel)]="p.nome"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Idade</ion-label>
+              <ion-input [(ngModel)]="p.idade" placeholder="somente numero"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">RG</ion-label>
+              <ion-input type="number" [(ngModel)]="p.RG"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+    </ion-card>
+  </section>
   <ion-card id="card">
     <h6>Concorda em participar da nossa campanha de divulgação? Criaremos uma fake-news com seu nome e anunciaremos em nossas paginas, tudo bem?</h6>
     <ion-checkbox id="concordo" color="danger"></ion-checkbox> sim, Concordo
   </ion-card>
-  <ion-button expand="block" (click)="openFakeNews()">RESERVAR</ion-button>
+  <ion-button expand="block" (click)="reservar()">RESERVAR</ion-button>
 </ion-content>

@@ -1,0 +1,32 @@
+ion-toolbar {
+    --background: antiquewhite;
+}
+ion-content {
+    --background: url('/assets/bg.jpg') no-repeat center center / cover;
+  }
+ion-card {
+    position: relative;
+    text-align: center;
+    background-color: white;
+    
+}
+img {
+    padding-top: -1px;
+    padding-bottom: 0px;
+}
+#hora, h2 {
+    color: white;
+
+}
+.passagem {
+    --background: darkgreen !important;
+    -webkit-background-size: cover;
+}
+.delivery {
+    --background: red !important;
+    -webkit-background-size: cover;
+}
+.mototaxi {
+    --background: black !important;
+    -webkit-background-size: cover;
+}

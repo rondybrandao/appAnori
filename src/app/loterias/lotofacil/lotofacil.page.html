@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>L O T O F A C I L</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <!--<ion-card-subtitle>LOTOFACIL</ion-card-subtitle>-->
+      <ion-card-title>Fechamento 18-6</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Escolha 18 dezenas e click no botão GERAR COMBINAÇÕES o aplicativo
+      vai gerar 6 apostas fechadas e vai conferir se houve premiações naquela aposta.
+      Acertando 15 dezenas você garantirá 13 pontos
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h5>Dezenas: {{  entrada_usuario.length }}</h5>
+        <div id="palpite">
+          <ion-note *ngFor="let entrada of entrada_usuario">
+            {{ entrada }}
+          </ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <br>
+  <ul>
+    <li><input type="checkbox" id="cb1" value="1" [checked]="form[0].checked" [ngModel]="form[0].checked"  (ngModelChange)="onFilterChange(form[0])" />
+      <label for="cb1"><div class="trapezio" >[ 01 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb2" value="2" [checked]="form[1].checked" [ngModel]="form[1].checked" (ngModelChange)="onFilterChange(form[1])" />
+      <label for="cb2"><div class="trapezio" >[ 02 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb3" value="3" [checked]="form[2].checked" [ngModel]="form[2].checked" (ngModelChange)="onFilterChange(form[2])"/>
+      <label for="cb3"><div class="trapezio" >[ 03 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb4" value="4" [checked]="form[3].checked" [ngModel]="form[3].checked" (ngModelChange)="onFilterChange(form[3])"/>
+      <label for="cb4"><div class="trapezio" >[ 04 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb5" value="5" [checked]="form[4].checked" [ngModel]="form[4].checked" (ngModelChange)="onFilterChange(form[4])"/>
+      <label for="cb5"><div class="trapezio" >[ 05 ]</div></label>
+    </li>
+  </ul>
+  <ul>
+    <li><input type="checkbox" id="cb6" value="6" [checked]="form[5].checked" [ngModel]="form[5].checked"  (ngModelChange)="onFilterChange(form[5])"/>
+      <label for="cb6"><div class="trapezio" >[ 06 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb7" value="7" [checked]="form[6].checked" [ngModel]="form[6].checked"  (ngModelChange)="onFilterChange(form[6])"/>
+      <label for="cb7"><div class="trapezio" >[ 07 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb8" value="8" [checked]="form[7].checked" [ngModel]="form[7].checked"  (ngModelChange)="onFilterChange(form[7])"/>
+      <label for="cb8"><div class="trapezio" >[ 08 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb9" value="9" [checked]="form[8].checked" [ngModel]="form[8].checked"  (ngModelChange)="onFilterChange(form[8])"/>
+      <label for="cb9"><div class="trapezio" >[ 09 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb10" value="10" [checked]="form[9].checked" [ngModel]="form[9].checked"  (ngModelChange)="onFilterChange(form[9])"/>
+      <label for="cb10"><div class="trapezio" >[ 10 ]</div></label>
+    </li>
+  </ul>
+  <ul>
+    <li><input type="checkbox" id="cb11" value="11" [checked]="form[10].checked" [ngModel]="form[10].checked"  (ngModelChange)="onFilterChange(form[10])"/>
+      <label for="cb11"><div class="trapezio" >[ 11 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb12" value="12" [checked]="form[11].checked" [ngModel]="form[11].checked"  (ngModelChange)="onFilterChange(form[11])"/>
+      <label for="cb12"><div class="trapezio" >[ 12 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb13" value="13" [checked]="form[12].checked" [ngModel]="form[12].checked"  (ngModelChange)="onFilterChange(form[12])"/>
+      <label for="cb13"><div class="trapezio" >[ 13 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb14" value="14" [checked]="form[13].checked" [ngModel]="form[13].checked"  (ngModelChange)="onFilterChange(form[13])"/>
+      <label for="cb14"><div class="trapezio" >[ 14 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb15" value="15" [checked]="form[14].checked" [ngModel]="form[14].checked"  (ngModelChange)="onFilterChange(form[14])"/>
+      <label for="cb15"><div class="trapezio" >[ 15 ]</div></label>
+    </li>
+  </ul>
+  <ul>
+    <li><input type="checkbox" id="cb16" value="16" [checked]="form[15].checked" [ngModel]="form[15].checked"  (ngModelChange)="onFilterChange(form[15])"/>
+      <label for="cb16"><div class="trapezio" >[ 16 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb17" value="17" [checked]="form[16].checked" [ngModel]="form[16].checked"  (ngModelChange)="onFilterChange(form[16])"/>
+      <label for="cb17"><div class="trapezio" >[ 17 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb18" value="18" [checked]="form[17].checked" [ngModel]="form[17].checked"  (ngModelChange)="onFilterChange(form[17])"/>
+      <label for="cb18"><div class="trapezio" >[ 18 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb19" value="19" [checked]="form[18].checked" [ngModel]="form[18].checked"  (ngModelChange)="onFilterChange(form[18])"/>
+      <label for="cb19"><div class="trapezio" >[ 19 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb20" value="20" [checked]="form[19].checked" [ngModel]="form[19].checked"  (ngModelChange)="onFilterChange(form[19])"/>
+      <label for="cb20"><div class="trapezio" >[ 20 ]</div></label>
+    </li>
+  </ul>
+  <ul>
+    <li><input type="checkbox" id="cb21" value="21" [checked]="form[20].checked" [ngModel]="form[20].checked"  (ngModelChange)="onFilterChange(form[20])"/>
+      <label for="cb21"><div class="trapezio" >[ 21 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb22" value="22" [checked]="form[21].checked" [ngModel]="form[21].checked"  (ngModelChange)="onFilterChange(form[21])"/>
+      <label for="cb22"><div class="trapezio" >[ 22 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb23" value="23" [checked]="form[22].checked" [ngModel]="form[22].checked"  (ngModelChange)="onFilterChange(form[22])"/>
+      <label for="cb23"><div class="trapezio" >[ 23 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb24" value="24" [checked]="form[23].checked" [ngModel]="form[23].checked"  (ngModelChange)="onFilterChange(form[23])"/>
+      <label for="cb24"><div class="trapezio" >[ 24 ]</div></label>
+    </li>
+    <li><input type="checkbox" id="cb25" value="25" [checked]="form[24].checked" [ngModel]="form[24].checked"  (ngModelChange)="onFilterChange(form[24])"/>
+      <label for="cb25"><div class="trapezio" >[ 25 ]</div></label>
+    </li>
+  </ul>
+
+  <ion-button size="large" color="primary" (click)="callFechamento()">Gerar Combinações</ion-button>
+  
+
+  <ion-grid *ngIf="apostas.length > 0">
+    <section>
+      <ion-card class="contador" *ngFor="let aposta of apostas; index as i">
+        <span>aposta {{i + 1}}:</span><h5>{{aposta}}</h5>
+      </ion-card>
+    </section>
+  </ion-grid>
+
+</ion-content>

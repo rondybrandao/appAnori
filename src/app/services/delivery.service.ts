@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import * as moment from 'moment'
 
 @Injectable({
   providedIn: 'root'
@@ -43,18 +44,25 @@ export class DeliveryService {
   }
 
   fazerPedido(pedido, total, position, endereco, troco){
-    console.log(position)
+    //console.log(position)
+    let currentTime = moment().format('MMMM D YYYY, h:mm:ss a')
+    //console.log(currentTime)
     return new Promise((resolve)=>{
       this.db.database.ref('delivery/pretinho/pedidos').push({
         pedido: pedido,
         total: total,
         position: position,
         endereco: endereco,
-        troco: troco
+        troco: troco,
+        hora: currentTime
         //referencia: referencia
       }).then(res => {
-        console.log(res)
-        resolve(res)
+        let r = {
+          key:res.key,
+          hora:currentTime
+        }
+        
+        resolve(r)
       })
     })
   }

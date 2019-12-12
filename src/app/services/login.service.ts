@@ -41,12 +41,13 @@ export class LoginService {
   }
 
   saveUser(user, uid) {
-    let nome
+    
     console.log(user)
     console.log(uid)
-    return this.db.database.ref('Usuarios').child('rondy').set({
-      userId:"1111",
+    return this.db.database.ref('usuarios/' + uid).set({
+      uid:uid,
       nome:user.nome,
+      //sobrenome: user.sobrenome,
       nascimento: user.nascimento,
       sexo: user.sexo,
       time: user.time

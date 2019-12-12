@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="voltar()">
+      <ion-icon size="large" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>C o m p r o v a n t e s</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item [ngClass]="'passagem'">
+      <ion-avatar item-start>
+        <img src="assets/suse-logo-04.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>S.U.S.E Passagens</h2>
+        <p>Novembro 5, 2019</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      <p>codigo da compra: ytrfhhfgyt_ytytd</p>
+      <p>Silva Lopes</p>
+      <p>2 Passagens</p>
+      <p><strong>Total: R$ 200,00</strong></p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+      
+      </ion-col>
+      <ion-col>
+        
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          11h atrás
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card *ngFor="let item of list_comprovantes">
+    <ion-item [ngClass]='item.items.tipo'>
+      <ion-avatar item-start>
+        <img src="assets/suse-logo-04.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ item.items.plataforma }}</h2>
+        <p id="hora">{{ item.items.hora }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      <p>codigo da compra: {{ item.items.key }}</p>
+      <p>{{ item.items.empresa}}</p>
+      <p><strong>Total: R$ {{ item.items.total }}</strong></p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+      
+      </ion-col>
+      <ion-col>
+        
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          11h atrás
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

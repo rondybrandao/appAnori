@@ -4,7 +4,7 @@
       <ion-icon size="large" name="arrow-back"></ion-icon>
     </ion-buttons>
     <ion-title>
-      Escolha sua viagem 
+      S.U.S.E - P A S S A G E M
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,11 +29,11 @@
   </ion-radio-group>
   <ion-item>
     <ion-label>Origem</ion-label>
-    <ion-select value="ANORI" okText="Confirmar" cancelText="Cancelar" [(ngModel)]="viagem.origem" required>
-      <ion-select-option value="ANORI">Anori</ion-select-option>
-      <ion-select-option value="ANAMA">Anamã</ion-select-option>
-      <ion-select-option value="MANAUS">Manaus</ion-select-option>
-      <ion-select-option value="MANACAPURU">Manacapuru</ion-select-option>
+    <ion-select value="" okText="Confirmar" cancelText="Cancelar" [(ngModel)]="viagem.origem" required>
+      <ion-select-option value="anori">Anori</ion-select-option>
+      <ion-select-option value="anama">Anamã</ion-select-option>
+      <ion-select-option value="manaus">Manaus</ion-select-option>
+      <ion-select-option value="manacapuru">Manacapuru</ion-select-option>
     </ion-select>
   </ion-item>
 
@@ -189,7 +189,7 @@
   
 
   <ion-button expand="block" (click)="pesquisar_passagem()">Pesquisar</ion-button>
-  <!--<ion-button expand="block" (click)="addViagem()">addViagem()</ion-button>-->
+  <ion-button expand="block" (click)="addViagem()">addViagem()</ion-button>
 
   <ion-card *ngIf="barco">
     <ion-grid>

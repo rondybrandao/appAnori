@@ -1,3 +1,4 @@
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Component, NgZone } from '@angular/core';
 
 import { Platform, NavController } from '@ionic/angular';
@@ -15,15 +16,21 @@ export class AppComponent {
   email_usuario
   public appPages = [
     {
-      title: 'Perfil',
+      title: 'Inicio',
       url: '/home',
       icon: 'home'
+    }, 
+    {
+      title: 'Minhas notificações',
+      url: '/minhas-notificacoes',
+      icon:'mail-unread'
     },
     {
-      title: 'Sugestões',
-      url: '/list',
-      icon: 'list'
+      title: 'Meus comprovantes',
+      url: '/comprovantes',
+      icon: 'checkbox-outline'
     }
+    
   ];
 
   constructor(
@@ -33,7 +40,8 @@ export class AppComponent {
     public afAuth: AngularFireAuth,
     public navCrtl: NavController,
     private router: Router,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private db: AngularFireDatabase
   ) {
     this.initializeApp();
   }
@@ -63,6 +71,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.afAuth.auth.onAuthStateChanged(user => {
         if (user) {
+      
           this.ngZone.run(()=>{
             this.router.navigate(["/home"]);
             this.splashScreen.hide();

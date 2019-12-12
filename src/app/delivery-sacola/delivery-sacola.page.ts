@@ -1,3 +1,4 @@
+import { UserService } from './../services/user.service';
 import { DeliveryService } from './../services/delivery.service';
 //import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,8 @@ export class DeliverySacolaPage implements OnInit {
   total = 0
   loading
   referencia
-  troco
+  posicaoUsuario = {}
+  troco = ""
   endereco = {
     bairro: "",
     rua: "",
@@ -29,14 +31,17 @@ export class DeliverySacolaPage implements OnInit {
     //private router: Router,
     private service: DeliveryService,
     private geolocation: Geolocation,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private userService: UserService
     ) {
     console.log(navParams.get('pedido'))
     this.pedido = navParams.get('pedido')
+  
    }
 
   ngOnInit() {
     this.calcTotal(this.pedido)
+    this.getPosition()
   }
 
   async dismiss() {
@@ -48,7 +53,7 @@ export class DeliverySacolaPage implements OnInit {
     });
   }
 
-  async enviarPedido() {
+  async enviarPedido_() {
     this.loading = await this.loadingController.create({message:'Por favor, aguarde...'})
     await this.loading.present()
     let position
@@ -60,18 +65,43 @@ export class DeliverySacolaPage implements OnInit {
         latitude: latitude,
         longitude: longitude
       }
-    }).then((res)=>{
+    }).then(()=>{
       console.log(position)
       this.service.fazerPedido(this.pedido, this.total, position, this.endereco, this.troco).then((res)=>{
         console.log(res)
+        
+        let comprovante = {
+          key: res,
+          plataforma:'s.u.s.e delivery',
+          empresa:'Boteco do Pretinho',
+          total: this.total
+        
+        }
+        this.userService.addComprovanteCarteira(comprovante)
         this.loading.dismiss()
         this.ok = true
       })
     })
-    
-    
   }
-
+  async enviarPedido(){
+    this.loading = await this.loadingController.create({message:'Por favor, aguarde...'})
+    await this.loading.present()
+    this.service.fazerPedido(this.pedido, this.total, this.posicaoUsuario, this.endereco, this.troco).then((res)=>{
+      console.log(res)
+      console.log(res['key'])
+      let comprovante = {
+        key: res['key'],
+        plataforma:'s.u.s.e delivery',
+        tipo: 'delivery',
+        empresa:'Boteco do Pretinho',
+        total: this.total,
+        hora: res['hora']
+      }
+      this.userService.addComprovanteCarteira(comprovante)
+      this.loading.dismiss()
+      this.ok = true
+    })
+  }
   calcTotal(sacola){
     let total = 0
     sacola.forEach(element => {
@@ -96,16 +126,20 @@ export class DeliverySacolaPage implements OnInit {
     this.geolocation.getCurrentPosition().then((res)=>{
       let latitude = res.coords.latitude;
       let longitude = res.coords.longitude;
-      pos = {
+      this.posicaoUsuario = {
         latitude: latitude,
         longitude: longitude
       }
-      console.log(latitude, longitude, pos)
-      return pos
+      //console.log(latitude, longitude, pos)
+      //return pos
     })
   }
 
   deletarItem(index){
+    
+    let subTotal = this.pedido[index].subTotal
+    this.total = this.total - subTotal
+    console.log(this.pedido[index].subTotal, this.total)
     this.pedido.splice(index, 1);
   }
 }

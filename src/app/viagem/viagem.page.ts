@@ -1,7 +1,6 @@
 import { PassagensService } from './../services/passagens.service';
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { formatDate } from '@angular/common';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
 
@@ -25,6 +24,7 @@ export class ViagemPage implements OnInit {
   qnt
   calendar
   ida
+  dataDeIdaFormatada
   volta
   viagemVolta
   public v: Viagem = new Viagem()
@@ -110,6 +110,7 @@ export class ViagemPage implements OnInit {
       const format = 'MM/dd';
       const locale = 'en-US';
       const formattedDate = formatDate(data, format, locale);
+      this.dataDeIdaFormatada = formattedDate
       this.passagemService.pesquisar(formattedDate, origem).then((resp) => {
         console.log(resp)
         if(resp != null) {
@@ -147,7 +148,7 @@ export class ViagemPage implements OnInit {
   }
 
   openCompra(){
-    this.router.navigate(['passagem', {total:this.valor}])
+    this.router.navigate(['passagem', {total:this.valor, qnt:this.qnt, poltronas:this.poltronas, origem:this.origem, dataIda:this.dataDeIdaFormatada}])
     //this.router.navigate(['assento', {qnt:1, poltronas: this.poltronas}])
   }
 

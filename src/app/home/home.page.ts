@@ -1,3 +1,4 @@
+import { LoginService } from './../services/login.service';
 import { Component, ViewChild } from '@angular/core';
 import { NavController, IonSlides } from '@ionic/angular';
 
@@ -9,10 +10,18 @@ import { NavController, IonSlides } from '@ionic/angular';
 export class HomePage {
   category = 'home'
   @ViewChild(IonSlides) slides: IonSlides;
-  constructor(public navCtrl: NavController) {}
+  constructor(
+    public navCtrl: NavController,
+    private loginService: LoginService) {
+      this.getUser()
+    }
 
-  openFutebol() {
-    this.navCtrl.navigateForward('futebol')
+  // openFutebol() {
+  //   this.navCtrl.navigateForward('futebol')
+  // }
+
+  openLoteria() {
+    this.navCtrl.navigateForward('loteria')
   }
   openPrefeitura() {
     this.navCtrl.navigateForward('prefeitura')
@@ -65,5 +74,11 @@ export class HomePage {
       this.slides.slideNext();
       //this.wavesPosition -= this.wavesDifference;
     }
+  }
+
+  getUser(){
+    const auth = this.loginService.getAuth()
+
+    console.log(auth.currentUser.uid)
   }
 }

@@ -1,0 +1,218 @@
+ion-toolbar {
+  --background: forestgreen;
+  color: white;
+}
+
+ion-content {
+  --background: url('/assets/bg.jpg') no-repeat center center / cover;
+  --padding-start: 5px;
+  --padding-end: 0px;
+}
+  
+ion-note {
+  --color: #000000;
+  font-family: fantasy;
+  font-size: 22px;
+  padding: 3px;
+}
+ion-button {
+  width: -webkit-fill-available;
+  margin-inline-end: 6px;
+}
+ion-grid {
+  padding-top: 0px;
+}
+  
+ion-card {
+  --background: forestgreen;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+.title-md {
+  padding-top: 10px;
+  text-align: center
+  }
+
+h5 {
+  color: black;
+  font-family: fantasy;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+q::before {
+  content: counter(meucontador);
+}
+.contador {
+  counter-increment: meucontador;
+}
+#dezenas-corrente {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    padding-inline-start: 35px;
+  }
+  #aposta {
+    padding-left: 3px;
+    padding-bottom: 3px;
+    letter-spacing: 3px;
+  }
+  
+  #aposta-label {
+    color: cadetblue
+  }
+  ul {
+      list-style-type: none;
+      padding-inline-start: 0px;
+      padding-inline-end: 0px;
+      padding-top: 15px;
+    }
+    
+    li {
+      display: inline-block;
+      padding: 1px;
+    }
+    
+    input[type="checkbox"][id^="cb"] {
+      display: none;
+    }
+    
+    ion-checkbox[id^="cb"] {
+      display: none;
+    }
+    
+    label {
+      border: 0px solid #fff;
+      padding: 0px;
+      display: block;
+      position: relative;
+      margin: 0px;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    label::before {
+      background-color: white;
+      color: white;
+      content: " ";
+      display: block;
+      border-radius: 50%;
+      border: 1px solid grey;
+      position: absolute;
+      top: -5px;
+      left: 0px;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 28px;
+      transition-duration: 0.4s;
+      transform: scale(0);
+    }
+    
+    label img {
+      height: 100px;
+      width: 100px;
+      transition-duration: 0.2s;
+      transform-origin: 50% 50%;
+    }
+    
+    :checked+label {
+      border-color: #ddd;
+    }
+    
+    :checked+label::before {
+      content: "✓";
+      background-color: grey;
+      transform: scale(0.5);
+    }
+
+    #circulo1 {
+      background: radial-gradient(circle closest-side,#f00 0%,#f00 98%,rgba(0,0,0,0) 100%);
+    }
+  
+  .arredondar {
+      display: inline-block;
+      background-color: #0c9c45;
+      padding: 12px;
+      font-size: 14; /*remove "white spaces"*/
+      color:#fff;
+      font-weight: bold;
+  }
+  .arredondar, .arredondar img {
+      -webkit-clip-path: circle(50% at 50% 50%);
+              clip-path: circle(50% at 50% 50%);
+  }
+  
+  .trapezio { 
+      display: inline-block;
+      background: cornsilk;
+      border: 1px solid #fff;
+      font-size: 13px;
+      height: 17px; 
+      width: 33px; 
+      font-weight: bold;
+  }
+  
+  q::before {
+    content: counter(meucontador);
+  }
+  .contador {
+    counter-increment: meucontador;
+  }
+  
+  .minha-classe {
+    counter-reset: meuContador;
+  }
+  
+  #arr {
+    padding-inline-start: 40px;
+  }
+  
+  #table-header {
+    color:cadetblue
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  table {
+    width:99%
+  }
+  td {
+    text-align: center
+  }
+  #sena {
+    color: #0c9c45
+  }
+  #quina {
+    color: blue
+  }
+  #quadra {
+    color: #f00
+  }
+  #palpite {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    padding-inline-start: 0px;
+  }
+  #n_sorteio {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
